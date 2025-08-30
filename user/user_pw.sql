@@ -14,7 +14,7 @@
 
 SELECT user_pw
   FROM member
-WHERE user_id = 'korsh111'
+WHERE user_id = 'korsh111' AND user_name = '이상두'; --둘다 일치해야 함.
  
 
 UPDATE member
