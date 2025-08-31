@@ -6,9 +6,9 @@ INSERT
   INTO menu
 VALUES
 (
-NULL,
-restaurant_code,
-category_code,
-'menu_name',
-10000
+NULL, -- 메뉴 코드
+1, -- 레스토랑 코드
+1, -- 카테고리 코드
+'우동', -- 메뉴 이름
+10000 -- 가격
 )
