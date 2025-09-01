@@ -1,0 +1,22 @@
+-- BOR-12 댓글 조회 comment_read
+-- 사용자, 관리자는 게시글에 모든 댓글을 조회한다.
+-- 1번 게시물에 대한 댓글 조회
+
+SELECT
+	  M.NICK_NAME			AS '닉네임'
+	, C.COMMENTS_CONTENT	AS '댓글 내용'
+	, C.COMMENTS_CREATED_AT 	AS '댓글 등록일'
+	, C.COMMENT_UPDATED_AT	AS '댓글 수정일'
+	, C.RECOMMENTS_CODE AS '대댓글'
+	, COUNT(L.USER_CODE) AS '좋아요'
+	FROM COMMENTS C
+	JOIN MEMBER M ON M.USER_CODE = C.USER_CODE
+	JOIN COMMENT_LIKES L ON L.COMMENTS_CODE = C.COMMENTS_CODE
+	WHERE C.BOARD_CODE = 1
+	GROUP BY L.COMMENTS_CODE;
+
+SELECT * FROM COMMENTS;
+
+
+
+	

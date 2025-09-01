@@ -1,0 +1,6 @@
+-- NTF-12 푸시 알림 템플릿 목록 조회
+SELECT 
+	NOTIFICATION_SEND_CODE AS '알림발송고유식별자', 
+	COMMON_CODE 		   AS '공통타입코드',
+	NOTIFICATION_CONTENT   AS '알림내용'
+FROM NOTIFICATION_SEND;
