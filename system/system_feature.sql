@@ -15,7 +15,7 @@ SET common_name = '사용자'
 WHERE common_code = '001';
 
 -- SYS-03 : 관리자는 공통코드(신고, 알림)를 목록 조회한다.
-SELECT common_code, common_name
+SELECT *
 FROM common;
 
 -- SYS-04 : 관리자는 공통코드(신고, 알림)를 삭제한다.
