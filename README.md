@@ -56,7 +56,7 @@
 
 ### 🚀 **주요 기능**
 1. **맛집 관리**
-    - 관리자가 기본적인 맛집 리스트를 작성 및 등록
+    - 점주는 기본적인 맛집 리스트를 작성 및 등록
     - 사용자는 등록된 맛집 열람 가능
 2. **리뷰 작성 및 공유**
     - 사용자가 맛집에 대한 리뷰와 평점을 남길 수 있음
@@ -107,6 +107,7 @@
 
 - **DB 관리 도구**  
   <img src="https://img.shields.io/badge/HeidiSQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/DBeaver-372923?style=for-the-badge&logo=dbeaver&logoColor=white" />
 
 - **가상화 환경**  
   <img src="https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" />
