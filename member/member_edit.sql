@@ -41,3 +41,7 @@ UPDATE member
 UPDATE member
    SET age = 77
  WHERE user_code = 1;
+ 
+ UPDATE member
+   SET STATUS = 'N'
+ WHERE user_code = 1;
