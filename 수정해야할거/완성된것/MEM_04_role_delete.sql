@@ -8,4 +8,4 @@
  
 DELETE 
   FROM ROLE
- WHERE role_code = 1;
+ WHERE role_code = 1;			/*삭제할 역할의 고유식별자*/

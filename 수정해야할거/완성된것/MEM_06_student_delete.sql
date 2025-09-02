@@ -8,4 +8,4 @@
  
 DELETE
  FROM student
-WHERE student_code = 1;
+WHERE student_code = 1;   			-- 학생부에서 삭제할 학생고유식별자를 이곳에 입력.
