@@ -7,7 +7,6 @@
 SELECT
        a.user_id	  		   	AS	'아이디'
      , a.nick_name  		   	AS '닉네임'
-  	  , b.board_content	  	   AS '게시글 내용'
      , b.board_title 	   	AS '게시글 제목'
      , CONCAT(
 	  YEAR(b.board_created_at),
