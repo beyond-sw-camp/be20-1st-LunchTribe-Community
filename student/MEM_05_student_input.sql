@@ -12,12 +12,20 @@
 
 -- 학생부 입력 예시입니다.
 INSERT
- INTO student
+  INTO student
 (
-  student_name, student_phone, training_start, training_end, student_term
+    student_name				-- 학생이름
+  , student_phone				-- 학생전화번호
+  , training_start			-- 훈련시작날짜
+  , training_end				-- 훈련종료날짜
+  , student_term				-- 기수
 )
   VALUES
 (
-  '이상도', '010-4749-0000', '2025-08-13', '2025-02-09', '20기'
-);
+   '이상도'
+  , '01047490000'
+  , 20250813
+  , 20250209
+  , 20
+); 
 
