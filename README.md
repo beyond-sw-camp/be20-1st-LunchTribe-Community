@@ -1,5 +1,7 @@
 # 🍽️ **점심의 민족**
 
+<img width="1024" height="1024" alt="Image" src="https://github.com/user-attachments/assets/604a42e2-7e51-46bd-8e66-8d5648b8d529" />
+
 **점심의 민족**은 한화시스템 BEYOND SW캠프 수강생들이 캠프 활동 동안 점심시간에 다녀온 음식점에 대한 작성한 리뷰를 모아 **가성비 맛집** 추천을 통해 가격이 저렴한 음식점을 한눈에 알아보기 쉽게 도와주고 모든 기수가 소통할 수 있는 커뮤니티 공간을 만들어서 쉽게 친해질 수 있게 도와줍니다.
 
 <br>
@@ -133,3 +135,200 @@
 - **ERD 및 다이어그램 도구**  
   <img src="https://img.shields.io/badge/ERD_Cloud-4A90E2?style=for-the-badge&logo=cloud&logoColor=white" />
   <img src="https://img.shields.io/badge/Draw.io-F08705?style=for-the-badge&logo=diagrams.net&logoColor=white" />
+
+
+  ## 📁 **5. 프로젝트 구조**
+
+```
+LunchTribe-Community/
+├── 📋 00_lunchTribe_DDL.sql           # 메인 데이터베이스 스키마 정의
+├── 📊 Dumy_Data*.sql                   # 더미 데이터 삽입 스크립트
+├── 🔧 query_fot_root.sql              # 루트 권한 쿼리
+├── 🍽️ restaurant.sql                  # 음식점 관련 기본 스크립트
+├── 
+├── 📂 doc/                            # 📋 프로젝트 문서화
+│   ├── 00_WBS/                        # Work Breakdown Structure
+│   ├── 01_RFQ/                        # Requirements & Functional Specs
+│   ├── 02_UML/                        # UML 다이어그램
+│   ├── 03_ERD/                        # Entity Relationship Diagram
+│   └── 04_DataTable/                  # 데이터 테이블 명세서
+├── 
+├── 👥 member/                         # 👤 회원 관리 시스템
+│   ├── MEM_09_sign_up.sql            # 회원가입
+│   ├── MEM_10_sign_in.sql            # 로그인
+│   ├── MEM_12_member_lookup.sql      # 회원 조회
+│   ├── MEM_13_member_edit.sql        # 회원정보 수정
+│   ├── MEM_14_member_find_userid.sql # 아이디 찾기
+│   ├── MEM_15_userpw_reset.sql       # 비밀번호 재설정
+│   └── MEM_16_member_delete.sql      # 회원 탈퇴
+├── 
+├── 🏫 student/                        # 🎓 학생 관리 시스템
+│   ├── MEM_05_student_input.sql      # 학생 정보 입력
+│   ├── MEM_06_student_lookup.sql     # 학생 조회
+│   └── ...
+├── 
+├── 🎭 role/                           # 🔐 권한 관리 시스템
+│   ├── MEM_01_role_input.sql         # 권한 등록
+│   ├── MEM_02_role_lookup.sql        # 권한 조회
+│   ├── MEM_03_role_edit.sql          # 권한 수정
+│   └── MEM_04_role_delete.sql        # 권한 삭제
+├── 
+├── 📝 board/                          # 📋 게시판 시스템
+│   ├── BOA-03_board_detail.sql       # 게시글 상세 조회
+│   ├── BOR-01_board_search.sql       # 게시글 검색
+│   ├── BOR-02_board_list.sql         # 게시판 목록 조회
+│   ├── BOR-04_board_complaint.sql    # 게시글 신고
+│   ├── BOR-05_board_create.sql       # 게시글 등록
+│   ├── BOR-06_board_update.sql       # 게시글 수정
+│   ├── BOR-07_board_delete.sql       # 게시글 삭제
+│   ├── BOR-08_board_bookmark.sql     # 게시글 즐겨찾기
+│   ├── BOR-09_board_viewcount.sql    # 조회수 관리
+│   └── BOR-10_board_master_delete_list.sql # 관리자 삭제 목록
+├── 
+├── 💬 comment/                        # 💭 댓글 시스템
+│   ├── BOR-11_comment_create.sql     # 댓글 등록
+│   ├── BOR-12_comment_read.sql       # 댓글 조회
+│   ├── BOR-13_comment_update.sql     # 댓글 수정
+│   ├── BOR-14_comment_delete.sql     # 댓글 삭제
+│   └── BOR-15_comment_like.sql       # 댓글 좋아요
+├── 
+├── 🚨 complain/                       # ⚠️ 신고 시스템
+│   ├── MEM-17_comment_complain_list.sql    # 댓글 신고 조회
+│   ├── MEM-18_board_complain_list.sql      # 게시글 신고 조회
+│   ├── MEM-19_user_complain_list.sql       # 사용자 신고 목록
+│   └── MEM-20_complain_auto_count.sql      # 자동 신고 집계
+├── 
+├── 🍽️ restaurant/                     # 🏪 음식점 관리 시스템
+│   ├── restaurant_feature.sql        # 음식점 기능
+│   ├── restaurant_insert.sql         # 음식점 등록
+│   ├── 가게리스트/                    # 음식점 목록 관리
+│   ├── 리뷰/                          # 리뷰 시스템
+│   ├── 마크 표시/                     # 북마크 기능
+│   ├── 메뉴/                          # 메뉴 관리
+│   ├── 점주/                          # 점주 관리
+│   └── 카테고리/                      # 카테고리 분류
+├── 
+├── 🍜 menu/                           # 📋 메뉴 관리 시스템
+│   ├── 메뉴 입력.sql                  # 메뉴 등록
+│   ├── 메뉴 조회.sql                  # 메뉴 조회
+│   ├── 메뉴 수정.sql                  # 메뉴 수정
+│   └── 메뉴 삭제.sql                  # 메뉴 삭제
+├── 
+├── 👤 mypage/                         # 🏠 마이페이지 시스템
+│   ├── MEM_23_mypost.sql             # 내 게시글 조회
+│   ├── MEM_24_mypost_reply.sql       # 내 댓글 조회
+│   ├── MEM_25_mypage_restaurant_bookmark.sql # 즐겨찾는 음식점
+│   ├── MEM_26_mypage_review_lookup.sql        # 내 리뷰 조회
+│   └── admin_console/                # 관리자 콘솔
+├── 
+├── 🔔 NOTIFICATION/                   # 📢 알림 시스템
+│   ├── NTF-01_notification_create.sql      # 알림 생성
+│   ├── NTF-02_notification_list.sql        # 알림 목록 조회
+│   ├── NTF-03_notification_delete.sql      # 알림 삭제
+│   ├── NTF-04_notification_broadcast.sql   # 전체 알림 발송
+│   ├── NTF-05_notification_personal.sql    # 개인 알림 발송
+│   ├── NTF-06_notification_setting.sql     # 알림 설정
+│   ├── NTF-07_notification_block_all.sql   # 전체 알림 차단
+│   ├── NTF-08_notification_block_personal.sql # 개인 알림 차단
+│   ├── NTF-09_push_template_create.sql     # 푸시 템플릿 등록
+│   ├── NTF-10_push_template_update.sql     # 푸시 템플릿 수정
+│   ├── NTF-11_push_template_delete.sql     # 푸시 템플릿 삭제
+│   └── NTF-12_push_template_list.sql       # 푸시 템플릿 목록
+└── 
+└── ⚙️ system/                         # 🔧 시스템 관리
+    ├── system_feature.sql            # 시스템 기능
+    └── 공통코드/                      # 공통 코드 관리
+        ├── SYS-01_common_code_create.sql    # 공통코드 생성
+        ├── SYS-02_common_code_read.sql      # 공통코드 조회
+        ├── SYS-03_common_code_update.sql    # 공통코드 수정
+        └── SYS-04_common_code_delete.sql    # 공통코드 삭제
+```
+
+### 🛠️ **기술 스택**
+- **Database**: MySQL
+- **Language**: SQL
+- **Documentation**: Markdown
+- **Version Control**: Git
+
+
+<br>
+
+## 📅 **6. 프로젝트 기획**
+
+### 1. **WBS**
+
+<details> 
+<summary> WBS 이미지</summary>
+<img width="1400" height="800" alt="WBS" src="https://github.com/user-attachments/assets/770e5cfa-048a-4ac9-abba-0cd393c1c334" />
+</details>
+<br>
+
+### 2. **요구사항 명세서**
+
+<details> 
+<summary> 요구사항 명세서 이미지</summary>
+<img width="2000" height="1413" alt="요구사항 명세서" src="https://github.com/user-attachments/assets/871fbb97-f9bc-45da-8a62-3c4ac75c8882" />
+
+<img width="2000" height="1413" alt="요구사항 명세서" src="https://github.com/user-attachments/assets/aca3498b-20fe-4023-b5bd-44ff349ffeec" />
+</details>
+<br>
+
+### 3. **UML**
+
+<details> 
+<summary> 다이어그램 이미지</summary>
+<img width="2144" height="2182" alt="UML" src="https://github.com/user-attachments/assets/02793388-7f77-4ca4-af03-40d6aa9ca786" />
+</details>
+<br>
+
+### 4. **DB 모델링**
+
+<details> 
+<summary> ERD 이미지</summary>
+<img width="3528" height="1601" alt="ERD" src="https://github.com/user-attachments/assets/14ae76ae-1584-49ae-9613-0abb3b33ae7a" />
+</details>
+
+<br>
+
+### 5. **테이블 정의서**
+
+<details> 
+<summary> 테이블 정의서 사진</summary>
+<img width="725" height="812" alt="Image" src="https://github.com/user-attachments/assets/f23cf636-e2fe-439d-b570-6afb0959fd2d" />
+
+
+<img width="726" height="803" alt="Image" src="https://github.com/user-attachments/assets/ff9e3b3d-04d7-43db-972c-11e220cb4a8b" />
+
+
+<img width="727" height="357" alt="Image" src="https://github.com/user-attachments/assets/fb51e6a3-f8d5-4864-b34c-424773e260d7" />
+</details>
+
+### 6. **DB 스키마 정의서 및 더미데이터**
+DB 스키마 정의서 및 더미데이터는 [여기](https://github.com/be20-1st-LunchTribe-Community/be20-1st-LunchTribe-Community/blob/main/Dumy_data.sql)에서 확인하실 수 있습니다.
+
+
+
+<br>
+
+## ⚙️ **7. 서버 구축**
+
+###  리플리케이션(Replication)</p>
+
+
+데이터를 여러 서버에 복제하여 저장하고, 이를 통해 데이터의 가용성과 성능을 높이고, 장애 발생 시 데이터 손실을 방지할 수 있습니다.
+
+---
+
+**Master-Slave** Replication을 사용하였습니다
+* Master 서버: 데이터를 업데이트하는 주체로, 데이터 변경이 일어나면 그 변경 사항이 슬레이브 서버로 복제됩니다
+* Slave 서버: Master 서버의 데이터를 복제하여 읽기 작업만을 수행합니다.
+
+
+#### 
+<details><summary>master-slave 연결 확인 및 slave read-only 확인</summary>
+    <img width="371" height="455" alt="마스터 작동 확인" src="https://github.com/user-attachments/assets/95b1df52-6d83-461b-a593-41c2d5b0821c" />
+    <img width="1023" height="470" alt="슬레이브 적용 확인 및 read-only 확인" src="https://github.com/user-attachments/assets/f153426e-cb4e-40b0-9379-2e359ccf5821" />
+  </details>
+</details>
+
+<br>
