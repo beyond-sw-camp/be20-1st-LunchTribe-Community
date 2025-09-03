@@ -1,3 +1,4 @@
+-- 테이블 삭제
 DROP TABLE IF EXISTS member CASCADE;
 DROP TABLE IF EXISTS student CASCADE;
 DROP TABLE IF EXISTS notification_history CASCADE;
@@ -59,14 +60,16 @@ CREATE TABLE `restaurant_bookmark` (
 	`restaurant_bookmark_code`	INT	NOT NULL AUTO_INCREMENT COMMENT '고유번호(PK)',
 	`user_code`	INT	NOT NULL	COMMENT 'member 내에서 쓸 숫자 고유값',
 	`restaurant_code`	INT	NOT NULL	COMMENT '가게고유의식별자',
-	PRIMARY KEY (`restaurant_bookmark_code`)
+	PRIMARY KEY (`restaurant_bookmark_code`),
+	UNIQUE (`user_code`, `restaurant_code`)
 );
 
 CREATE TABLE `board_bookmark` (
 	`board_bookmark_code`	INT	NOT NULL AUTO_INCREMENT COMMENT '고유번호(PK)',
 	`user_code`	INT	NOT NULL	COMMENT '즐겨찾기에 저장할 사용자',
 	`board_code`	INT	NOT NULL	COMMENT '게시판 고유번호',
-	PRIMARY KEY (`board_bookmark_code`)
+	PRIMARY KEY (`board_bookmark_code`),
+	UNIQUE (`user_code`, `board_code`)
 );
 
 CREATE TABLE `complaint` (
@@ -103,7 +106,8 @@ CREATE TABLE `comment_likes` (
 	`comment_likes_code`	INT	NOT NULL AUTO_INCREMENT COMMENT '고유번호(PK)',
 	`comments_code`	INT	NOT NULL	COMMENT '댓글고유번호',
 	`user_code`	INT	NOT NULL	COMMENT 'member 내에서 쓸 숫자 고유값',
-	PRIMARY KEY (`comment_likes_code`)
+	PRIMARY KEY (`comment_likes_code`),
+	UNIQUE (`user_code`, `comments_code`)
 );
 
 CREATE TABLE `notification_send` (
@@ -117,7 +121,8 @@ CREATE TABLE `restaurant_likes` (
 	`restaurant_likes_code`	INT	NOT NULL AUTO_INCREMENT COMMENT '고유번호(PK)',
 	`user_code`	INT	NOT NULL	COMMENT 'member 내에서 쓸 숫자 고유값',
 	`restaurant_code`	INT	NOT NULL	COMMENT '가게고유의식별자',
-	PRIMARY KEY (`restaurant_likes_code`)
+	PRIMARY KEY (`restaurant_likes_code`),
+	UNIQUE (`user_code`, `restaurant_code`)
 );
 
 CREATE TABLE `review` (
@@ -446,6 +451,7 @@ values ('c01', '회원')
      , ('c32', '댓글');
      
      
+     
 -- 알림 발송 테이블
 insert into notification_send 
 values ('n01','c02', '따끈따끈 신규 입점, [가게명] 오픈!')
@@ -454,26 +460,36 @@ values ('n01','c02', '따끈따끈 신규 입점, [가게명] 오픈!')
      
 -- 알림 상태
 INSERT INTO notification_status (user_code, common_code, notification_received) VALUES
-(1, 'c01', 'Y'),
-(1, 'c02', 'N'),
-(2, 'c01', 'N'),
-(2, 'c02', 'Y'),
-(3, 'c01', 'Y'),
+(1, 'c02', 'Y'),
+(1, 'c31', 'N'),
+(1, 'c32', 'N'),
+(2, 'c02', 'N'),
+(2, 'c31', 'Y'),
+(2, 'c32', 'N'),
 (3, 'c02', 'Y'),
-(4, 'c01', 'N'),
+(3, 'c31', 'Y'),
+(3, 'c32', 'N'),
 (4, 'c02', 'N'),
-(5, 'c01', 'Y'),
-(5, 'c02', 'N'),
-(6, 'c01', 'N'),
-(6, 'c02', 'Y'),
-(7, 'c01', 'Y'),
-(7, 'c02', 'N'),
-(8, 'c01', 'N'),
-(8, 'c02', 'Y'),
-(9, 'c01', 'Y'),
-(9, 'c02', 'N'),
-(10, 'c01', 'Y'),
-(10, 'c02', 'N');
+(4, 'c31', 'N'),
+(4, 'c32', 'Y'),
+(5, 'c02', 'Y'),
+(5, 'c31', 'N'),
+(5, 'c32', 'N'),
+(6, 'c02', 'N'),
+(6, 'c31', 'Y'),
+(6, 'c32', 'Y'),
+(7, 'c02', 'Y'),
+(7, 'c31', 'N'),
+(7, 'c32', 'N'),
+(8, 'c02', 'N'),
+(8, 'c31', 'Y'),
+(8, 'c32', 'Y'),
+(9, 'c02', 'Y'),
+(9, 'c31', 'N'),
+(9, 'c32', 'N'),
+(10, 'c02', 'N'),
+(10, 'c31', 'N'),
+(10, 'c32', 'N');
 
 -- 알림내역
 
